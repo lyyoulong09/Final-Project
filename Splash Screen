@@ -1,0 +1,221 @@
+// Dom & Lee's Bitmoji
+var drawBitMoji = function(bitX, bitY, bitHeight) {
+    
+        noStroke(); //no outline for head
+        fill(231, 196, 169); //skin tone
+        ellipse(bitX+(bitHeight/100*0),bitY+(bitHeight/100*0),bitHeight/100*75,bitHeight/100*90); //head
+        
+        fill(43, 62, 138); //hat color
+        arc(bitX+(bitHeight/100*0),bitY-(bitHeight/100*24),bitHeight/100*63,bitHeight/100*41    ,-183,4); //hat
+        fill(231, 196, 169); // skin tone
+        arc(bitX-(bitHeight/100*1),bitY-(bitHeight/100*29),bitHeight/100*27,bitHeight/100*21    ,181,359); //hat detail
+        
+        // noStroke(); //no outline for cheeks
+        // fill(255, 255, 255);
+        // triangle(bitX-(bitHeight/100*23),bitY+(bitHeight/100*73),bitX-(bitHeight/100*66),bitY-(bitHeight/100*172),bitX-(bitHeight/100*58),bitY-(bitHeight/100*79)); // left cheek
+        // triangle(bitX+(bitHeight/100*96),bitY-(bitHeight/100*270),bitX+(bitHeight/100*35),bitY-(bitHeight/100*7),bitX+(bitHeight/100*33),bitY+(bitHeight/100*94)); // right cheek
+        
+        fill(15, 14, 14); //shirt color
+        quad(bitX+(bitHeight/100*23),bitY+(bitHeight/100*37),bitX-(bitHeight/100*22),bitY        +(bitHeight/100*38),bitX-(bitHeight/100*53),bitY+(bitHeight/100*73),bitX+(bitHeight/100*65),bitY+(bitHeight/100*71)); //shirt
+        
+        
+        fill(115, 78, 78); //beard color
+        arc(bitX+(bitHeight/100*0),bitY+(bitHeight/100*19),bitHeight/100*67,bitHeight/100*52,-16,197); //beard
+        
+        stroke(10, 10, 10); //outline for mouth
+        fill(250, 250, 250); // mouth color
+        arc(bitX+(bitHeight/100*0),bitY+(bitHeight/100*22),bitHeight/100*33,bitHeight/100*21,-6,185); //mouth
+        line(bitX+(bitHeight/100*17),bitY+(bitHeight/100*20),bitX-(bitHeight/100*17),bitY+(bitHeight/100*21)); //top lip
+        
+        stroke(5, 5, 5); // outline for eyes
+        ellipse(bitX+(bitHeight/100*11),bitY-(bitHeight/100*6),bitHeight/100*19,bitHeight/100*10); // right eye
+        ellipse(bitX-(bitHeight/100*13),bitY-(bitHeight/100*5),bitHeight/100*20,bitHeight/100*10); // left eye
+        fill(74, 63, 6);
+        ellipse(bitX+(bitHeight/100*15),bitY-(bitHeight/100*7),bitHeight/100*5,bitHeight/100*5); // right pupil
+        ellipse(bitX-(bitHeight/100*10),bitY-(bitHeight/100*6),bitHeight/100*5,bitHeight/100*5); // left pupil
+        
+        fill(231, 196, 169); // nose color
+        bezier(bitX-(bitHeight/100*1),bitY+(bitHeight/100*0),bitX+(bitHeight/100*21),bitY+(bitHeight/100*22),bitX-(bitHeight/100*2),bitY+(bitHeight/100*11),bitX-(bitHeight/100*3),bitY+(bitHeight/100*15)); // nose
+        
+        noFill();
+        arc(bitX-(bitHeight/100*13),bitY+(bitHeight/100*158), bitHeight/100*111, bitHeight/100*349,260,278); // left eyebrow
+        arc(bitX+(bitHeight/100*14),bitY+(bitHeight/100*156),bitHeight/100*118,bitHeight/100*349,261,276); // right eyebrow
+        
+        fill(250, 247, 247); //text color
+        textSize(bitHeight/100*23); // text size
+        text("DS",bitX-(bitHeight/100*14),bitY+(bitHeight/100*67)); //initials
+        };
+var head = function(x,y,h){
+
+fill(199, 177, 177); 
+arc ( x+(h/100),y+(h/100*45),(h/100*69),(h/100*250),-155,-24);  // hat
+
+//fill(255, 255, 255);
+//text("B",x-4,y-57);
+
+    fill(230, 180, 115);
+    ellipse (x+(h/100) , y+(h/100) , (h/100*65) , (h/100*100) ); // head
+    
+    fill(0, 0, 0);
+    arc ( x+(h/100),y-(h/100*26),(h/100*56),(h/100*48),166,375); // hair
+    
+    fill(0, 0, 0);
+    arc ( x-(h/100*13),y-(h/100*18),(h/100*17),(h/100*5),138,390); // left eyesbrow
+    
+    fill(0, 0, 0);
+    arc ( x+(h/100*13),y-(h/100*18),(h/100*17),(h/100*5),38,390); // right eyesbrow
+
+    
+    fill(250, 250, 250);
+    ellipse (x-(h/100*12) , y-(h/100*10) , (h/100*13) , (h/100*11) ); // left eyes
+    
+    fill(230, 180, 115);
+    arc ( x+(h/100),y+(h/100*17),(h/100*9),(h/100*20),176,355); // nose
+
+    fill(0, 0, 0);
+    line (x-(h/100*-5),y+(h/100*17),x+(h/100*-4),y+(h/100*16)); //upperlips
+    
+    fill(255, 255, 255);
+    arc ( x+(h/100), y+(h/100*23),(h/100*30),25,3,181); // mouth
+    
+    fill(0, 0, 0);
+    line (x-(h/100*15),y+(h/100*23),x+(h/100*14),y+(h/100*23)); //upperlips
+    
+    fill(0, 0, 0);
+    line (x-(h/100*7),y+(h/100*23),x-(h/100*7),y+(h/100*31)); //teeths 1
+    
+    fill(0, 0, 0);
+    line (x+(h/100*4),y+(h/100*23),x+(h/100*4),y+(h/100*33)); //teeths 2
+    
+    fill(0, 0, 0);
+    line (x+(h/100*13),y+(h/100*29),x-(h/100*11),y+(h/100*29)); //bottom teeth
+    
+    fill(0, 0, 0);
+    ellipse (x-(h/100*12),y-(h/100*10),(h/100*6),(h/100*6)); //left pupil
+
+    fill(255, 255, 255);
+    ellipse (x+(h/100*13) , y-(h/100*10) , (h/100*13) , (h/100*11) ); // right eyes
+    
+    fill(0, 0, 0);
+    ellipse (x+(h/100*13),y-(h/100*10),(h/100*6),(h/100*6)); // right pupil
+};
+var body = function(x,y,h) {
+        
+    fill(255, 255, 255);
+    rect(x-(h/100*40),y+(h/100*51),(h/100*80),(h/100*92)); // shirt
+    
+    //fill(255, 255, 255);
+    //text("LS",x-7,y+110);
+    
+    fill(230, 180, 115);
+    arc ( x+(h/100),y+(h/100*49),(h/100*44),(h/100*23),363,535); // lower neck
+    
+    fill(255, 250, 250);
+    quad(x+(h/100*115),y+(h/100*90),x+(h/100*100),y+(h/100*105),x+(h/100*40),y+(h/100*75),x+(h/100*40),y+(h/100*50));  // right hand
+
+
+    fill(255, 250, 250);
+    quad(x-(h/100*123),y+(h/100*96),x-(h/100*40),y+(h/100*50),x-(h/100*40),y+(h/100*79),x-(h/100*100),y+(h/100*110));  // left hand
+    
+};
+
+//Button code
+var Button = function(config) {
+    this.x = config.x || 0;
+    this.y = config.y || 0;
+    this.width = config.width || 150;
+    this.height = config.height || 50;
+    this.label = config.label || "Click";
+    this.onClick = config.onClick || function() {};
+};
+Button.prototype.draw = function() {
+    fill(255, 255, 255);
+    rect(this.x, this.y, this.width, this.height, 5);
+    fill(0, 0, 0);
+    textSize(19);
+    text(this.label, this.x+6, this.y+this.height/1.5);
+};
+Button.prototype.isMouseInside = function() {
+    return mouseX > this.x &&
+           mouseX < (this.x + this.width) &&
+           mouseY > this.y &&
+           mouseY < (this.y + this.height);
+};
+Button.prototype.handleMouseClick = function() {
+    if (this.isMouseInside()) {
+        this.onClick();
+    }
+};
+
+//Start Time
+var startButton = new Button ({
+    x: 58,
+    y: 322,
+    width: 101,
+    height: 40,
+    label: "Start Time"
+});
+
+var instructions = new Button ({
+    x: 211,
+    y: 322,
+    width: 115,
+    height: 40,
+    label: "How to play!"
+});
+
+//Draws blackboard and boarders
+var themeBackGround = function() {
+    //The blackboard
+    fill(214, 208, 180);
+    rect(0,0,400,400);
+    
+    //Boarders
+    fill(0, 0, 0);
+    rect(0, 0, 10, 400);
+    rect(390, 0, 10, 400);
+    rect(0, 0, 400, 10);
+    rect(0, 390, 400, 10);
+    
+    //Cornors
+    fill(184, 53, 53);
+    triangle(0, 0, 0, 43, 45, 1);
+    triangle(356, 1, 400, 45, 400, 0);
+    triangle(0, 361, 0, 400, 50, 400);
+    triangle(400, 361, 401, 400, 350, 400);
+
+};
+
+//First Scene
+var splashScreen = function() {
+    
+    themeBackGround();
+    
+    //Title
+    fill(255, 0, 0);
+    textSize(35);
+    text("Computer Science Trivia", 9.5, 73);
+    
+    //Bitmojis
+    fill(255, 255, 255);
+    ellipse(315,158,109,114);
+    ellipse(79,153,84,86);
+    drawBitMoji(78, 142, 50);
+    head(313,142,45);
+    body(313,147,35);
+    
+    //Creaters
+    textSize(20);
+    fill(255, 0, 0);
+    text("Created by:", 134,220);
+    textSize(18);
+    fill(0, 0, 0);
+    text("Dominique Silva", 122, 247);
+    text("&", 177, 268);
+    text("Lee Suy", 153, 284);
+    
+    //Buttons
+    startButton.draw();
+    instructions.draw();
+
+};
