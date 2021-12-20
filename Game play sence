@@ -1,0 +1,57 @@
+var score = 0;
+
+//Draws blackboard and boarders
+var themeBackGround = function() {
+    //The blackboard
+    fill(214, 208, 180);
+    rect(0,0,400,400);
+    
+    //Boarders
+    fill(0, 0, 0);
+    rect(0, 0, 10, 400);
+    rect(390, 0, 10, 400);
+    rect(0, 0, 400, 10);
+    rect(0, 390, 400, 10);
+    
+    //Cornors
+    fill(184, 53, 53);
+    triangle(0, 0, 0, 43, 45, 1);
+    triangle(356, 1, 400, 45, 400, 0);
+    triangle(0, 361, 0, 400, 50, 400);
+    triangle(400, 361, 401, 400, 350, 400);
+
+};
+
+var gamePlayScene = function(){
+// Draw background
+themeBackGround();
+
+//Displays the score on top right
+fill(0, 0, 0);
+textSize(25);
+text("Score: ", 35, 37);
+
+
+//For loops that create the boxes and scorepoints
+textSize(35);
+fill(255, 0, 0);
+for(var i = 0; i < 3; i++){
+    fill(184, 53, 53);
+    rect(i *100 + 66, i * 0 + 106, 75, 65);
+    fill(0, 0, 0);
+    text("100", i * 100 + 75, i * 0 + 150);
+} for(var i = 0; i < 3; i++){
+    fill(184, 53, 53);
+    rect(i *100 + 66, i * 0 + 180, 75, 65);
+    fill(0, 0, 0);
+    text("200", i * 100 + 75, i * 0 + 225);
+}for(var i = 0; i < 3; i++){
+    fill(184, 53, 53);
+    rect(i *100 + 66, i * 0 + 252, 75, 65);
+    fill(0, 0, 0);
+    text("300", i * 100 + 75, i * 0 + 300);
+}
+
+};
+
+gamePlayScene();
